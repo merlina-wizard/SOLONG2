@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:23 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/04 13:02:24 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:17:01 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "ft_printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
-
+# include "structures.h"
 
 #endif

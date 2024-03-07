@@ -18,6 +18,7 @@ typedef struct s_tile
 
 typedef struct s_map
 {
+	char	**mat;
 	char	*path;
 	int		h;
 	int		len;
@@ -38,7 +39,6 @@ typedef struct s_game
 	void	*mlx;
 	void	*win;
 	t_map	map;
-	char	**mat;
 	int		w;
 	int		h;
 	int		nmove;
@@ -48,5 +48,12 @@ typedef struct s_game
 	char	**star;
 	t_tile	*pos_path;
 }				t_game;
+
+typedef struct s_flag
+{
+	int	c;
+	int	e;
+	int	p;
+} t_flag;
 
 #endif

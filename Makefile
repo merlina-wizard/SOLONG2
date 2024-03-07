@@ -1,6 +1,6 @@
 NAME = so_long
 
-SRCS = main.c maps.c game.c path.c close.c tile.c hooks.c enemy.c visual.c \
+SRCS = main.c maps/maps_validation.c \
 		gnl/get_next_line.c gnl/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)

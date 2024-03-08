@@ -6,48 +6,12 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:57:00 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/07 19:42:03 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/08 20:48:00 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-//maps
-//ottenere il matrix con get
-//dimensione mappa
-//stampare all interno
-//validazione
-//C P E
-//Perimeto
-//[]
-//strada (flood fill)
 
-int	set_game(t_game *game, char *path)
-{
-	game->mlx = NULL;
-	game->win = NULL;
-	game->map.h = 0;
-	game->map.path = path;
-	game->map.len = 0;
-	game->map.mat = NULL;
-	game->map.ncoin = 0;
-	game->map.coin_coll = 0;
-	game->map.movcoin = 0;
-	game->nmove = 0;
-	game->loop = 0;
-	game->npath = 0;
-	game->aux_rand = 0;
-	game->map.nexit = 0;
-	return (1);
-}
-
-void	set_flag(t_flag *flag)
-{
-	flag->c = 0;
-	flag->e = 0;
-	flag->p = 0;
-}
-
-//setta h e len e controlla []
 int	dim_matrix(t_map *map)
 {
 	int		fd;

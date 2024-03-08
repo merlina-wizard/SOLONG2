@@ -1,34 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   structures.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 20:52:24 by mamerlin          #+#    #+#             */
+/*   Updated: 2024/03/08 20:56:21 by mamerlin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
 
-typedef struct s_image
-{
-	void	*img;
-	int		heigh;
-	int		width;
-}				t_image;
-
 typedef struct s_tile
 {
+	void	*img;
 	char	type;
 	int		posx;
 	int		posy;
-	t_image	image;
 }				t_tile;
 
 typedef struct s_map
 {
+	int		t_h;
+	int		t_w;
 	char	**mat;
 	char	*path;
 	int		h;
 	int		len;
-	t_tile	player;
-	t_tile	exit[10];
-	int		nexit;
-	int		ncoin;
+	t_tile	player[4];
+	t_tile	exit;
 	int		coin_coll;
 	int		movcoin;
-	t_tile	coin[10];
+	t_tile	coin;
 	t_tile	enemy;
 	t_tile	wall;
 	t_tile	bg;
@@ -54,6 +59,6 @@ typedef struct s_flag
 	int	c;
 	int	e;
 	int	p;
-} t_flag;
+}				t_flag;
 
 #endif

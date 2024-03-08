@@ -1,7 +1,10 @@
 NAME = so_long
 
 SRCS = main.c maps/maps_validation.c \
-		gnl/get_next_line.c gnl/get_next_line_utils.c
+		gnl/get_next_line.c gnl/get_next_line_utils.c \
+		put_image.c \
+		set_structures.c \
+		movement.c \
 
 OBJS = $(SRCS:.c=.o)
 

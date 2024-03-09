@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:11 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/08 21:06:40 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/09 20:13:54 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int argc, char **argv)
 	}
 	if (check_p_letter(&game.map, &flag) == 1)
 		printf("YES\n");
-	printf("arriva\n");
 	game.mlx = mlx_init();
 	game.win
 		= mlx_new_window(game.mlx,

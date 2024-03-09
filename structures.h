@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:52:24 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 18:25:10 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/09 20:58:12 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_map
 	int		h;
 	int		len;
 	t_tile	player[4];
+	t_tile	player_to_print;
 	t_tile	exit;
 	int		coin_coll;
 	int		movcoin;

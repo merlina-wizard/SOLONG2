@@ -5,6 +5,7 @@ SRCS = main.c maps/maps_validation.c \
 		put_image.c \
 		set_structures.c \
 		movement.c \
+		robe.c \
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:06:06 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/08 20:52:12 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/09 21:03:27 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ void	init_image(t_game *g)
 	g->map.bg.img
 		= mlx_xpm_file_to_image(g->mlx, "xpm/background.xpm", &daje, &daje);
 	g->map.player[0].img
-		= mlx_xpm_file_to_image(g->mlx, "xpm/Rogue.xpm", &daje, &daje);
+		= mlx_xpm_file_to_image(g->mlx, "xpm/sp.xpm", &daje, &daje);
+	g->map.player[1].img
+		= mlx_xpm_file_to_image(g->mlx, "xpm/wp.xpm", &daje, &daje);
+	g->map.player[2].img
+		= mlx_xpm_file_to_image(g->mlx, "xpm/dp.xpm", &daje, &daje);
+	g->map.player[3].img
+		= mlx_xpm_file_to_image(g->mlx, "xpm/ap.xpm", &daje, &daje);
+	g->map.player_to_print.img = g->map.player[0].img;
 	g->map.exit.img
 		= mlx_xpm_file_to_image(g->mlx, "xpm/exit.xpm", &daje, &daje);
 	g->map.coin.img
@@ -31,10 +38,12 @@ void	init_image(t_game *g)
 
 void	print_map(t_game g)
 {
-	int	x;
-	int	y;
+	int			x;
+	int			y;
+	char	*str;
 
 	x = 0;
+	str = ft_itoa(g.nmoves);
 	while (x < g.map.len)
 	{
 		y = 0;
@@ -46,6 +55,9 @@ void	print_map(t_game g)
 		}
 		x++;
 	}
+	mlx_string_put(g.mlx, g.win, 10, 15, 0, "MOVES:");
+	mlx_string_put(g.mlx, g.win, 80, 15, 0, str);
+	free(str);
 }
 
 void	*get_tile(t_game game, char c)
@@ -57,7 +69,7 @@ void	*get_tile(t_game game, char c)
 	if (c == 'E')
 		return (game.map.exit.img);
 	if (c == 'P')
-		return (game.map.player[0].img);
+		return (game.map.player_to_print.img);
 	if (c == 'C')
 		return (game.map.coin.img);
 	if (c == 'N')
@@ -65,3 +77,8 @@ void	*get_tile(t_game game, char c)
 	else
 		return (NULL);
 }
+void	put_str(t_game *g)
+{
+	mlx_string_put(g->mlx, g->win, 0, 0, 0, ft_itoa(g->nmoves));
+}
+

@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:57:00 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/08 20:48:00 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/09 18:19:24 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,17 @@ char	**matrice(t_map *map)
 	return (matrix);
 }
 
-static int	counter_letter(char **map, int x, int y, t_flag *flag)
+static int	counter_letter(t_map *map, int x, int y, t_flag *flag)
 {
-	if (map[y][x] == 'E')
+	if (map->mat[y][x] == 'E')
 		flag->e++;
-	else if (map[y][x] == 'P')
+	else if (map->mat[y][x] == 'P')
+	{
 		flag->p++;
-	else if (map[y][x] == 'C')
+		map->player->posx = x;
+		map->player->posy = y;
+	}
+	else if (map->mat[y][x] == 'C')
 		flag->c++;
 	return (1);
 }
@@ -89,7 +93,7 @@ int	check_p_letter(t_map *map, t_flag *flag)
 				|| map->mat[y][x] != 'P' ||
 					map->mat[y][x] != '1' || map->mat[y][x] != '0'))
 				return (-1);
-			counter_letter(map->mat, x, y, flag);
+			counter_letter(map, x, y, flag);
 			y++;
 		}
 		x++;

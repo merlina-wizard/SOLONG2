@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:52:24 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/08 20:56:21 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/09 18:25:10 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_game
 	t_map	map;
 	int		w;
 	int		h;
-	int		nmove;
+	int		nmoves;
 	int		loop;
 	int		npath;
 	int		aux_rand;

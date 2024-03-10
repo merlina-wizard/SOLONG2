@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:57:00 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 18:19:24 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/10 00:58:09 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	dim_matrix(t_map *map)
 	}
 	free(line);
 	close(fd);
-	return (0);
+	return (1);
 }
 
 char	**matrice(t_map *map)
@@ -101,4 +101,34 @@ int	check_p_letter(t_map *map, t_flag *flag)
 	if (flag->e != 1 || flag->p != 1 || flag->c < 1)
 		return (-1);
 	return (1);
+}
+int	ft_argcheck(t_game g)
+{
+	int	i;
+
+	i = ft_strlen(g.map.path);
+	if (g.map.path[i - 1] != 'r' || g.map.path[i - 2] != 'e' || g.map.path[i - 3] != 'b'
+		|| g.map.path[i - 4] != '.')
+		return (0);
+	return (1);
+}
+
+int	blood_fill(t_game g, int x, int y)
+{
+	char	**mat;
+
+	mat = g.map.mat[y][x]; //FAI UNA COPIA MARTINA PUOI FARCELA!!! DAJE DE STRDUP
+	g.map.mat[y][x] = '1';
+	else
+	{
+		if (mat[y + 1][x] != '1')
+			blood_fill(g, y + 1, x);
+		if (mat[y - 1][x] != '1')
+			blood_fill(g, y - 1, x);
+		if (mat[y][x + 1] != '1')
+			blood_fill(g, y, x + 1);
+		if (mat[y][x - 1] != '1')
+			blood_fill(g, y, x - 1);
+	}
+
 }

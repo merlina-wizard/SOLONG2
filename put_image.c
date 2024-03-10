@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:06:06 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 21:03:27 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/09 23:48:33 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init_image(t_game *g)
 
 	daje = 64;
 	g->map.wall.img
-		= mlx_xpm_file_to_image(g->mlx, "xpm/lava.xpm", &daje, &daje);
+		= mlx_xpm_file_to_image(g->mlx, "xpm/wall.xpm", &daje, &daje);
 	g->map.bg.img
 		= mlx_xpm_file_to_image(g->mlx, "xpm/background.xpm", &daje, &daje);
 	g->map.player[0].img
@@ -33,7 +33,7 @@ void	init_image(t_game *g)
 	g->map.exit.img
 		= mlx_xpm_file_to_image(g->mlx, "xpm/exit.xpm", &daje, &daje);
 	g->map.coin.img
-		= mlx_xpm_file_to_image(g->mlx, "xpm/white.xpm", &daje, &daje);
+		= mlx_xpm_file_to_image(g->mlx, "xpm/coin.xpm", &daje, &daje);
 }
 
 void	print_map(t_game g)

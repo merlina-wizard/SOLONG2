@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:23 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 20:00:02 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/10 00:35:05 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ int		move_d(t_game *g);
 void	put_str(t_game *g);
 int		ft_numlen(long int i);
 char	*ft_itoa(int n);
+int	validate(t_game *g, char **argv);
+
 #endif

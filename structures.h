@@ -6,12 +6,19 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:52:24 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 20:58:12 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/10 00:31:09 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
+
+typedef struct s_flag
+{
+	int	c;
+	int	e;
+	int	p;
+}				t_flag;
 
 typedef struct s_tile
 {
@@ -42,6 +49,7 @@ typedef struct s_map
 
 typedef struct s_game
 {
+	t_flag	flag;
 	void	*mlx;
 	void	*win;
 	t_map	map;
@@ -55,11 +63,5 @@ typedef struct s_game
 	t_tile	*pos_path;
 }				t_game;
 
-typedef struct s_flag
-{
-	int	c;
-	int	e;
-	int	p;
-}				t_flag;
 
 #endif

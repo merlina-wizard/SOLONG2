@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:11 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/10 00:36:29 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:25:05 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_game	game;
-	int	i;
 
-	i = 0;
 	if (argc == 2)
 	{
 		validate(&game, argv);

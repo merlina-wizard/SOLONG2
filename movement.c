@@ -6,14 +6,13 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:57:36 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 21:00:49 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:33:55 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //hook wasd e esc
 
 #include "so_long.h"
-
 
 int	ft_quit(t_game *game)
 {
@@ -24,19 +23,20 @@ int	ft_quit(t_game *game)
 
 int	key_hook(int key, t_game *game)
 {
-	if (key == 53)
+	if (key == 65307)
 		ft_quit(game);
-	else if (key == 13)
-	game->nmoves += move_w(game);
-	else if (key == 1)
+	else if (key == 119)
+		game->nmoves += move_w(game);
+	else if (key == 115)
 		game->nmoves += move_s(game);
-	else if (key == 0)
+	else if (key == 97)
 		game->nmoves += move_a(game);
-	else if (key == 2)
+	else if (key == 100)
 		game->nmoves += move_d(game);
 	print_map(*game);
 	return (0);
 }
+
 int	move_w(t_game *g)
 {
 	int	y;
@@ -66,6 +66,7 @@ int	move_s(t_game *g)
 	g->map.player_to_print = g->map.player[0];
 	return (1);
 }
+
 int	move_a(t_game *g)
 {
 	int	y;

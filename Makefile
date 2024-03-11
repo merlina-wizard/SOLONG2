@@ -1,42 +1,43 @@
-NAME = so_long
+PROG    = so_long
 
-SRCS = main.c maps/maps_validation.c \
-		gnl/get_next_line.c gnl/get_next_line_utils.c \
-		put_image.c \
-		set_structures.c \
-		movement.c \
-		robe.c \
+SRCS    =	main.c maps/maps_validation.c \
+			gnl/get_next_line.c gnl/get_next_line_utils.c \
+			put_image.c \
+			set_structures.c \
+			movement.c \
+			robe.c \
 
-OBJS = $(SRCS:.c=.o)
+OBJS     = ${SRCS:.c=.o}
+MAIN    = main.c
 
-CC = gcc
+HEADER    = -Iinclude
 
-FTPRINTF = printf/
+CC         = gcc
+CFLAGS     = -Wall -Wextra -Werror -g
 
-CFLAGS	= -Wall -Wextra -Werror
-MFLAGS	= -lmlx -framework OpenGL -framework AppKit
+.c.o:        %.o : %.c
+	@gcc ${CFLAGS} ${HEADER} -Imlx -c $< -o $(<:.c=.o)
 
-$(NAME) : $(OBJS)
-	@ make -C $(FTPRINTF)
-	@ make -C ./mlx
-	cp ./mlx/libmlx.dylib .
-	${CC} ${CFLAGS} ${OBJS} ${MFLAGS} -o ${NAME} printf/libftprintf.a
+all:         ${PROG}
 
-all:	$(NAME)
+${PROG}:    ${OBJS}
+						@echo "\033[33m----Compiling lib----"
+						@$(CC) ${OBJS} -lmlx -lXext -lX11 -L mlx -o ${PROG} ft_printf/libftprintf.a
+						@echo "\033[32mSo Long Compiled!\n"
 
 clean:
-	@make clean -C $(FTPRINTF)
-	@make clean -C ./mlx
-	@rm -f $(OBJS)
+						@rm -f ${OBJS} ${OBJS_B}
 
-fclean: clean
-	@make fclean -C $(FTPRINTF)
-	@rm -f libmlx.dylib
-	@rm -f $(NAME)
+fclean:     clean
+						@rm -f $(NAME)
+						@rm -f ${PROG}
+						@echo "\n\033[31mDeleting EVERYTHING!\n"
 
 git:
 	git add .
 	git commit -m "update"
 	git push
+	
+re:            fclean all
 
-re: fclean all
+.PHONY: all clean fclean re

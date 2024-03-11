@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:57:00 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/10 00:58:09 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:38:27 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,22 +102,24 @@ int	check_p_letter(t_map *map, t_flag *flag)
 		return (-1);
 	return (1);
 }
+
 int	ft_argcheck(t_game g)
 {
 	int	i;
 
 	i = ft_strlen(g.map.path);
-	if (g.map.path[i - 1] != 'r' || g.map.path[i - 2] != 'e' || g.map.path[i - 3] != 'b'
+	if (g.map.path[i - 1] != 'r'
+		|| g.map.path[i - 2] != 'e' || g.map.path[i - 3] != 'b'
 		|| g.map.path[i - 4] != '.')
 		return (0);
 	return (1);
 }
 
-int	blood_fill(t_game g, int x, int y)
+/*int	blood_fill(t_game g, int x, int y)
 {
 	char	**mat;
 
-	mat = g.map.mat[y][x]; //FAI UNA COPIA MARTINA PUOI FARCELA!!! DAJE DE STRDUP
+	mat = g.map.mat[y][x];
 	g.map.mat[y][x] = '1';
 	else
 	{
@@ -130,5 +132,5 @@ int	blood_fill(t_game g, int x, int y)
 		if (mat[y][x - 1] != '1')
 			blood_fill(g, y, x - 1);
 	}
-
-}
+	return (0);
+}*/

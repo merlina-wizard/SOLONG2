@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:23 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/10 00:35:05 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:20:55 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define RES 64
 
-# include "printf/ft_printf.h"
+# include "ft_printf/ft_printf.h"
 # include "gnl/get_next_line.h"
 # include "structures.h"
 # include "mlx/mlx.h"

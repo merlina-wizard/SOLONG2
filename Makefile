@@ -26,7 +26,7 @@ ${PROG}:    ${OBJS}
 						@echo "\033[32mSo Long Compiled!\n"
 
 clean:
-						@rm -f ${OBJS} ${OBJS_B}
+						@rm -f ${OBJS}
 
 fclean:     clean
 						@rm -f $(NAME)
@@ -37,7 +37,7 @@ git:
 	git add .
 	git commit -m "update"
 	git push
-	
+
 re:            fclean all
 
 .PHONY: all clean fclean re

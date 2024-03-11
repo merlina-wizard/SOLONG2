@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:57:00 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/11 18:38:27 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:42:14 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,18 @@ int	ft_argcheck(t_game g)
 /*int	blood_fill(t_game g, int x, int y)
 {
 	char	**mat;
+	int		count;
 
+	count = g.flag.c;
 	mat = g.map.mat[y][x];
+	if (mat[y][x] == 'C')
+		count--;
+	if (mat[y][x] == 'E')
+		g.flag.e = 0;
+	if (count == 0 && g.flag.e == 0)
+		return (1);
 	g.map.mat[y][x] = '1';
+
 	else
 	{
 		if (mat[y + 1][x] != '1')

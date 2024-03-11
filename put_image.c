@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:06:06 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 23:48:33 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:31:33 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,16 @@ void	init_image(t_game *g)
 		= mlx_xpm_file_to_image(g->mlx, "xpm/exit.xpm", &daje, &daje);
 	g->map.coin.img
 		= mlx_xpm_file_to_image(g->mlx, "xpm/coin.xpm", &daje, &daje);
+	g->map.enemy[0].img
+		= mlx_xpm_file_to_image(g->mlx, "xpm/n0.xpm", &daje, &daje);
+	g->map.enemy[1].img
+		= mlx_xpm_file_to_image(g->mlx, "xpm/n1.xpm", &daje, &daje);
 }
 
 void	print_map(t_game g)
 {
-	int			x;
-	int			y;
+	int		x;
+	int		y;
 	char	*str;
 
 	x = 0;
@@ -55,8 +59,8 @@ void	print_map(t_game g)
 		}
 		x++;
 	}
-	mlx_string_put(g.mlx, g.win, 10, 15, 0, "MOVES:");
-	mlx_string_put(g.mlx, g.win, 80, 15, 0, str);
+	mlx_string_put(g.mlx, g.win, 10, 15, 1, "MOVES:");
+	mlx_string_put(g.mlx, g.win, 80, 15, 1, str);
 	free(str);
 }
 
@@ -73,12 +77,7 @@ void	*get_tile(t_game game, char c)
 	if (c == 'C')
 		return (game.map.coin.img);
 	if (c == 'N')
-		return (game.map.enemy.img);
+		return (game.map.enemy[0].img);
 	else
 		return (NULL);
 }
-void	put_str(t_game *g)
-{
-	mlx_string_put(g->mlx, g->win, 0, 0, 0, ft_itoa(g->nmoves));
-}
-

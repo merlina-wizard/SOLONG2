@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:42:15 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 15:29:36 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:52:26 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	move_w(t_game *g)
 
 	y = (g->map.player->posy);
 	x = g->map.player->posx;
-	if (g->map.mat[y - 1][x] != '1' || check_path(g, (y - 1), x))
+	if (g->map.mat[y - 1][x] != '1' && check_path(g, (y - 1), x))
 	{
 		g->map.mat[y][x] = '0';
 		y = (g->map.player->posy - 1);
@@ -38,7 +38,7 @@ int	move_s(t_game *g)
 
 	y = (g->map.player->posy);
 	x = g->map.player->posx;
-	if (g->map.mat[y + 1][x] != '1' || check_path(g, y + 1, x))
+	if (g->map.mat[y + 1][x] != '1' && check_path(g, y + 1, x))
 	{
 		g->map.mat[y][x] = '0';
 		y = (g->map.player->posy + 1);
@@ -57,7 +57,7 @@ int	move_a(t_game *g)
 
 	y = g->map.player->posy;
 	x = g->map.player->posx;
-	if (g->map.mat[y][x - 1] != '1' || check_path(g, y, x - 1))
+	if (g->map.mat[y][x - 1] != '1' && check_path(g, y, x - 1))
 	{
 		g->map.mat[y][x] = '0';
 		x = (g->map.player->posx - 1);
@@ -76,7 +76,7 @@ int	move_d(t_game *g)
 
 	y = g->map.player->posy;
 	x = g->map.player->posx;
-	if (g->map.mat[y][x + 1] != '1' || check_path(g, y, x + 1))
+	if (g->map.mat[y][x + 1] != '1' && check_path(g, y, x + 1))
 	{
 		g->map.mat[y][x] = '0';
 		x = (g->map.player->posx + 1);
@@ -93,9 +93,16 @@ int	check_path(t_game *g, int y, int x)
 	char	**mat;
 
 	mat = g->map.mat;
-	if (mat[y][x] == 'N')
+	if (mat[y][x] == 'C')
+		g->flag.c--;
+	else if (mat[y][x] == 'N')
 		ft_quit(g);
-	else if (mat[y][x] == 'E' && g->flag.c == 0)
-		ft_quit(g);
-	return (0);
+	else if (mat[y][x] == 'E')
+	{
+		if (g->flag.c == 0)
+			ft_quit(g);
+		else
+			return(0);
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:11 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 17:56:14 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:01:10 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		validate(&game, argv);
+		if (validate(&game, argv) != 1)
+			return(-1);
 		game.mlx = mlx_init();
 		game.win
 			= mlx_new_window(game.mlx,
@@ -37,11 +38,12 @@ int	validate(t_game *g, char **argv)
 	set_flag(&(g->flag));
 	set_game(g, argv[1]);
 	if (ft_argcheck(g))
-		return (1);
+		return (-1);
 	dim_matrix(&g->map);
 	matrice(&g->map);
-	if (check_p_letter(&g->map, &g->flag) != 1
-		&& check_blood(*g) != 1)
-		return (ft_printf("LO HAI FATTO APPPOSTA COGLIONE!"));
+	if (check_p_letter(&g->map, &g->flag) != 1)
+		return (ft_printf("LO HAI FATTO APPOSTA COGLIONE!"));
+	if (check_blood(*g) != 1)
+		return (ft_printf("LO HAI FATTO APPOSTA COGLIONE!"));
 	return (1);
 }

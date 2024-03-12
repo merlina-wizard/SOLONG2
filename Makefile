@@ -1,6 +1,7 @@
 PROG    = so_long
 
 SRCS    =	main.c maps/maps_validation.c \
+			maps/maps_validation2.c \
 			gnl/get_next_line.c gnl/get_next_line_utils.c \
 			put_image.c \
 			set_structures.c \

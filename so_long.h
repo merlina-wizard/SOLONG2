@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:23 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 15:52:55 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:41:27 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,28 @@
 # include "structures.h"
 # include "mlx/mlx.h"
 
-int		check_p_letter(t_map *map, t_flag *flag);
-char	**matrice(t_map *map);
-int		dim_matrix(t_map *map);
-int		set_game(t_game *game, char *path);
-void	set_flag(t_flag *flag);
-void	init_image(t_game *g);
-void	print_map(t_game g);
-void	*get_tile(t_game game, char c);
-int		key_hook(int key, t_game *game);
-int		ft_quit(t_game *game);
-int		move_w(t_game *g);
-int		move_s(t_game *g);
-int		move_a(t_game *g);
-int		move_d(t_game *g);
-int		ft_numlen(long int i);
-char	*ft_itoa(int n);
-int		validate(t_game *g, char **argv);
-int		check_path(t_game *g, int y, int x);
-char	*ft_strrchr(const char *s, int c);
+int			check_p_letter(t_map *map, t_flag *flag);
+char		**matrice(t_map *map);
+int			dim_matrix(t_map *map);
+int			ft_argcheck(t_game *g);
+char		**copy_mat(t_game g);
+void		blood_fill(t_game *g, int x, int y);
+int			check_blood(t_game g);
+int			ft_quit(t_game *game);
+int			counter_letter(t_map *map, int x, int y, t_flag *flag);
+int			set_game(t_game *game, char *path);
+void		set_flag(t_flag *flag);
+void		init_image(t_game *g);
+void		print_map(t_game g);
+void		*get_tile(t_game game, char c);
+int			key_hook(int key, t_game *game);
+int			move_w(t_game *g);
+int			move_s(t_game *g);
+int			move_a(t_game *g);
+int			move_d(t_game *g);
+int			check_path(t_game *g, int y, int x);
+int			ft_numlen(long int i);
+char		*ft_itoa(int n);
+int			validate(t_game *g, char **argv);
 
 #endif

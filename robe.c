@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 19:59:27 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 15:53:14 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:31:40 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,4 @@ char	*ft_itoa(int n)
 		l--;
 	}
 	return (str);
-}
-
-char	*ft_strrchr(const char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if (s[i] == ((unsigned char)c))
-			return ((char *)s + i);
-		i--;
-	}
-	return (NULL);
 }

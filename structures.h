@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:52:24 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/11 20:33:25 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:54:04 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,7 @@ typedef struct s_game
 	int		h;
 	int		nmoves;
 	int		loop;
-	int		npath;
 	int		aux_rand;
-	char	**star;
-	t_tile	*pos_path;
 }				t_game;
 
 #endif

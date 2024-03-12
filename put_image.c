@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:06:06 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/11 20:31:33 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:48:04 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	print_map(t_game g)
 		}
 		x++;
 	}
-	mlx_string_put(g.mlx, g.win, 10, 15, 1, "MOVES:");
-	mlx_string_put(g.mlx, g.win, 80, 15, 1, str);
+	mlx_string_put(g.mlx, g.win, 10, 310, 1, "MOVES:");
+	mlx_string_put(g.mlx, g.win, 80, 310, 1, str);
 	free(str);
 }
 

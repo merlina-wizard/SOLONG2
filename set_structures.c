@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:46:30 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/09 18:33:20 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:54:57 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	set_game(t_game *game, char *path)
 	game->map.movcoin = 0;
 	game->nmoves = 0;
 	game->loop = 0;
-	game->npath = 0;
 	game->aux_rand = 0;
 	return (1);
 }

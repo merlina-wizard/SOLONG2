@@ -6,6 +6,7 @@ SRCS    =	main.c maps/maps_validation.c \
 			set_structures.c \
 			movement.c \
 			robe.c \
+			movement2.c \
 
 OBJS     = ${SRCS:.c=.o}
 MAIN    = main.c
@@ -27,7 +28,7 @@ ${PROG}:    ${OBJS}
 
 clean:
 						@rm -f ${OBJS}
-						
+
 
 fclean:     clean
 						@rm -f $(NAME)

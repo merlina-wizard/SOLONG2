@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:23 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 12:50:54 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:52:55 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int		move_w(t_game *g);
 int		move_s(t_game *g);
 int		move_a(t_game *g);
 int		move_d(t_game *g);
-void	put_str(t_game *g);
 int		ft_numlen(long int i);
 char	*ft_itoa(int n);
 int		validate(t_game *g, char **argv);
 int		check_path(t_game *g, int y, int x);
+char	*ft_strrchr(const char *s, int c);
 
 #endif

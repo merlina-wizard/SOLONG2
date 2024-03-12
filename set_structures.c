@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:46:30 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 12:54:57 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:58:24 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	set_game(t_game *game, char *path)
 	game->map.path = path;
 	game->map.len = 0;
 	game->map.mat = NULL;
+	game->map.copy = NULL;
 	game->map.coin_coll = 0;
 	game->map.movcoin = 0;
 	game->nmoves = 0;

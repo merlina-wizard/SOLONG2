@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:52:24 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 11:54:04 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:04:52 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_map
 	int		t_h;
 	int		t_w;
 	char	**mat;
+	char	**copy;
 	char	*path;
 	int		h;
 	int		len;

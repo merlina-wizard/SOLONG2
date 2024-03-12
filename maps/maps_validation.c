@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:57:00 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 17:43:36 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:17:32 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,9 @@ int	ft_argcheck(t_game *g)
 	int	i;
 
 	i = ft_strlen(g->map.path);
-	printf("culo 1\n");
 	if (g->map.path[i - 1] != 'r'
 		|| g->map.path[i - 2] != 'e' || g->map.path[i - 3] != 'b'
 		|| g->map.path[i - 4] != '.')
-		return (printf("culo -1\n"));
+		return (1);
 	return (0);
 }

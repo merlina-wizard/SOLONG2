@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:23 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 17:41:27 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:51:30 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char		**matrice(t_map *map);
 int			dim_matrix(t_map *map);
 int			ft_argcheck(t_game *g);
 char		**copy_mat(t_game g);
-void		blood_fill(t_game *g, int x, int y);
+void		blood_fill(t_game *g, int y, int x);
 int			check_blood(t_game g);
 int			ft_quit(t_game *game);
 int			counter_letter(t_map *map, int x, int y, t_flag *flag);

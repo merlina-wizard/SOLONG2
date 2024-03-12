@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:11 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 19:01:10 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:02:30 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (validate(&game, argv) != 1)
+		{
+			free matricie;
 			return(-1);
+		}
+		free copia;
 		game.mlx = mlx_init();
 		game.win
 			= mlx_new_window(game.mlx,

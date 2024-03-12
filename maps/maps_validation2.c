@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:40:33 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 17:55:50 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:58:13 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,25 @@ char	**copy_mat(t_game g)
 	copy = (char **)malloc(sizeof(char *) * g.map.h + 1);
 	if (!copy)
 		return (NULL);
-	copy[g.map.h] = '\0';
+	copy[g.map.h] = NULL;
 	while (y < g.map.h)
 	{
-		ft_strdup(g.map.mat[y]);
+		copy[y] = ft_strdup(g.map.mat[y]);
 		y++;
 	}
 	return (copy);
 }
 
-void	blood_fill(t_game *g, int x, int y)
+void	blood_fill(t_game *g, int y, int x)
 {
-	char	**mat;
-
-	mat = g->map.copy;
 	g->map.copy[y][x] = '1';
-	if (mat[y + 1][x] != '1' && mat[y + 1][x] != 'N')
+	if (g->map.copy[y + 1][x] != '1' && g->map.copy[y + 1][x] != 'N')
 		blood_fill(g, y + 1, x);
-	if (mat[y - 1][x] != '1' && mat[y - 1][x] != 'N')
+	if (g->map.copy[y - 1][x] != '1' && g->map.copy[y - 1][x] != 'N')
 		blood_fill(g, y - 1, x);
-	if (mat[y][x + 1] != '1' && mat[y][x + 1] != 'N')
+	if (g->map.copy[y][x + 1] != '1' && g->map.copy[y][x + 1] != 'N')
 		blood_fill(g, y, x + 1);
-	if (mat[y][x - 1] != '1' && mat[y][x - 1] != 'N')
+	if (g->map.copy[y][x - 1] != '1' && g->map.copy[y][x - 1] != 'N')
 		blood_fill(g, y, x - 1);
 }
 

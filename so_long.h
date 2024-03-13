@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:02:23 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 19:51:30 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:50:59 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int			check_path(t_game *g, int y, int x);
 int			ft_numlen(long int i);
 char		*ft_itoa(int n);
 int			validate(t_game *g, char **argv);
+int		ft_close_matrix(char **matrix)
 
 #endif

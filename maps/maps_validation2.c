@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:40:33 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 19:58:13 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:54:16 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int	check_blood(t_game g)
 			return (-1);
 		y++;
 	}
+	ft_close_matrix(g.map.copy);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: mamerlin <mamerlin@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:57:00 by mamerlin          #+#    #+#             */
-/*   Updated: 2024/03/12 19:17:32 by mamerlin         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:22:46 by mamerlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	dim_matrix(t_map *map)
 		}
 		else
 			return (-2);
-		printf("h : %i\n", map->h);
 	}
 	free(line);
 	close(fd);

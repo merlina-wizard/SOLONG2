@@ -8,6 +8,7 @@ SRCS    =	main.c maps/maps_validation.c \
 			movement.c \
 			robe.c \
 			movement2.c \
+			close.c \
 
 OBJS     = ${SRCS:.c=.o}
 MAIN    = main.c
